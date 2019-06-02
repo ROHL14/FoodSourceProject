@@ -1,0 +1,289 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,700&display=swap");
+body,
+html {
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+  display: none;
+}
+
+header {
+  position: absolute;
+  padding: 1em;
+  z-index: 20;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: calc(100% - 2em);
+  background: white;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+}
+
+header a.logo {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+header nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav .nav-links {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100%;
+  margin: 0%;
+  padding: 0%;
+}
+
+header nav .nav-links li a {
+  padding: 1em;
+}
+
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 30px;
+  height: 2px;
+  margin: 4px;
+  background-color: black;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+      grid-template-columns: auto;
+}
+
+.main section {
+  padding: 3em;
+}
+
+.main section h1,
+.main section h2 {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.main section .go-btn,
+.main section .read-btn {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.main section .go-btn:hover,
+.main section .read-btn:hover {
+  font-size: 20px;
+}
+
+.main section h2 {
+  font-size: 1.4rem;
+}
+
+.main section .go-btn,
+.main section .read-btn {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.main section .primary {
+  padding: 1.5em 1.5em 1.5em calc(3em + 25px);
+  border: 1px solid gray;
+  display: inline-block;
+  margin-top: 3em;
+  margin-left: -3em;
+}
+
+.main section .clipper {
+  overflow: hidden;
+}
+
+.main section.welcome {
+  padding-top: 8em;
+  color: white;
+  background: url("../image/brownhamburguer-bg.jpg");
+  background-size: cover;
+}
+
+.main section.welcome p {
+  width: 70%;
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.main section.welcome h1 {
+  font-size: 2.4rem;
+}
+
+.main section.welcome .go-btn {
+  color: white;
+}
+
+.main section.sidebar,
+.main section.about {
+  font-size: 0.9rem;
+  line-height: 1.6em;
+}
+
+.main section.sidebar {
+  background: #65c511;
+}
+
+.main section.sidebar .read-btn {
+  margin-top: 2em;
+  display: block;
+}
+
+.main section.about .read-btn {
+  margin-top: 2em;
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 18px;
+  }
+}
+
+@media only screen and (min-width: 1020px) {
+  header {
+    background: none;
+  }
+  header .logo {
+    color: white;
+  }
+  .main {
+    -ms-grid-columns: 70% auto;
+        grid-template-columns: 70% auto;
+    -ms-grid-rows: 60% auto;
+        grid-template-rows: 60% auto;
+        grid-template-areas: "welcome " "welcome ";
+    height: 100vh;
+  }
+  section.welcome {
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    -ms-grid-column: 1;
+    grid-area: welcome;
+  }
+  section {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-rows: auto;
+        grid-template-rows: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  html {
+    font-size: 21px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 47vh;
+    top: 5vh;
+    background-color: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 50%;
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+    -webkit-transition: -webkit-transform 0.5s ease-in;
+    transition: -webkit-transform 0.5s ease-in;
+    transition: transform 0.5s ease-in;
+    transition: transform 0.5s ease-in, -webkit-transform 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+  }
+}
+
+.nav-active {
+  -webkit-transform: translateX(0%);
+          transform: translateX(0%);
+}
+
+@-webkit-keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: transtaleX(50px);
+            transform: transtaleX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+@keyframes navLinkFade {
+  from {
+    opacity: 0;
+    -webkit-transform: transtaleX(50px);
+            transform: transtaleX(50px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+}
+
+.toggle .line-1 {
+  -webkit-transform: rotate(-45deg) translate(-4px, 5px);
+          transform: rotate(-45deg) translate(-4px, 5px);
+}
+
+.toggle .line-2 {
+  opacity: 0;
+}
+
+.toggle .line-3 {
+  -webkit-transform: rotate(45deg) translate(-4px, -5px);
+          transform: rotate(45deg) translate(-4px, -5px);
+}
+/*# sourceMappingURL=main.css.map */
