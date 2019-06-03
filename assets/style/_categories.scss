@@ -1,0 +1,21 @@
+.categories-holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+
+  a {
+    margin: 1%;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    &:hover {
+      font-size: 20px;
+      font-weight: bold;
+      color: rgb(154, 7, 7);
+    }
+  }
+}

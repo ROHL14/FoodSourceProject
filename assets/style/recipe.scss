@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,700&display=swap");
+@import "./navbar";
+@import "./carousel";
+@import "./recipes";
+
+body,
+html {
+  margin: 0;
+}
+
+body {
+  height: 100%;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  position: relative;
+}

@@ -2,10 +2,10 @@ const appId = "99789f2d";
 const appKey = "f127013882151d0efa414261addd5a0c";
 
 let recipeCont = $(".recipe-container");
+let categorieArea = $(".carousel-slide");
 
-let categorieArea = $(".categories-holder");
-
-categorieArea.on("click", ".img-thumbnail", function() {
+categorieArea.on("click", "div", function() {
+  console.log(this);
   let chosenCategory = $(this).text();
   recipeCont.html("");
   let queryURL = `https://api.edamam.com/search?q=${chosenCategory}&app_id=${appId}&app_key=${appKey}&from=0&to=15`;
@@ -29,6 +29,9 @@ categorieArea.on("click", ".img-thumbnail", function() {
         let ingredients = recipe.ingredientLines;
         console.log(ingredients);
 
+        let url = recipe.url;
+        console.log(url);
+
         let newName = $("<h1 class='title'>" + nameRecipe + "</h1>");
         let newIngredients = $("<ol class='ingredients'>");
 
@@ -42,11 +45,16 @@ categorieArea.on("click", ".img-thumbnail", function() {
         );
         let newImg = $("<img class='image' src='" + image + "'/>");
 
+        let newInstructions = $(
+          "<a href='" + url + "'>How to cook " + nameRecipe + ".</a>"
+        );
+
         let newRecipe = $("<div class='recipe'></div>").append(
           newName,
           newIngredients,
           newCalories,
-          newImg
+          newImg,
+          newInstructions
         );
 
         recipeCont.append(newRecipe);
