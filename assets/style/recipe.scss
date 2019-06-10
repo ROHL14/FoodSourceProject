@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,700&display=swap");
 @import "./navbar";
-@import "./carousel";
+@import "./carouselAndSearch";
 @import "./recipes";
 
 body,
@@ -17,4 +17,18 @@ body {
 
 header {
   position: relative;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.header {
+  display: flex;
+  width: calc(100%-2em);
+  background: black;
+  color: white;
+  justify-content: center;
 }

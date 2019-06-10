@@ -140,35 +140,21 @@ header nav .nav-links li a {
           transform: rotate(45deg) translate(-4px, -5px);
 }
 
-.container-anim {
-  height: 46vh;
-  width: 100%;
-  overflow-x: hidden;
-  position: relative;
+.chose-options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.container-anim #prev {
-  cursor: pointer;
-  position: absolute;
-  top: 80%;
-  z-index: 10;
-  left: 45%;
-  font-size: 30px;
-  color: black;
+.chose-options .swiper-container {
+  width: 50%;
+  height: 45vh;
 }
 
-.container-anim #next {
-  cursor: pointer;
-  position: absolute;
-  top: 80%;
-  z-index: 10;
-  right: 45%;
-  font-size: 30px;
-  color: black;
-}
-
-.container-anim .items,
-.container-anim .items-2 {
+.chose-options .swiper-container .swiper-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -178,12 +164,23 @@ header nav .nav-links li a {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  -webkit-animation: carouselAnim 50s infinite alternate linear;
-          animation: carouselAnim 50s infinite alternate linear;
 }
 
-.container-anim .items .entry,
-.container-anim .items-2 .entry {
+.chose-options .swiper-container .swiper-wrapper .swiper-slide {
+  /* Center slide text vertically */
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chose-options .swiper-container .swiper-wrapper .swiper-slide .entry {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -205,116 +202,208 @@ header nav .nav-links li a {
           box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
-.container-anim .items .entry p,
-.container-anim .items-2 .entry p {
+.chose-options .swiper-container .swiper-wrapper .swiper-slide .entry p {
   text-align: center;
 }
 
-.container-anim .items .entry p.name,
-.container-anim .items-2 .entry p.name {
+.chose-options .swiper-container .swiper-wrapper .swiper-slide .entry p.name {
   font-weight: bold;
 }
 
-.container-anim .items .entry .image,
-.container-anim .items-2 .entry .image {
+.chose-options .swiper-container .swiper-wrapper .swiper-slide .entry .image {
   border-radius: 20%;
   width: 200px;
   height: 150px;
   padding: 2em;
 }
 
-@-webkit-keyframes carouselAnim {
-  from {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-  to {
-    -webkit-transform: translate(calc(-100% + (5 * 300px)));
-            transform: translate(calc(-100% + (5 * 300px)));
-  }
+.chose-options .option {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-@keyframes carouselAnim {
-  from {
-    -webkit-transform: translate(0, 0);
-            transform: translate(0, 0);
-  }
-  to {
-    -webkit-transform: translate(calc(-100% + (5 * 300px)));
-            transform: translate(calc(-100% + (5 * 300px)));
-  }
+.chose-options .option .search {
+  margin-top: 7%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 400px;
 }
 
-@media only screen and (max-width: 768px) {
-  .container-anim .items,
-  .container-anim .items-2 {
-    -webkit-animation: carouselAnim 40s infinite alternate linear;
-            animation: carouselAnim 40s infinite alternate linear;
-  }
-  @-webkit-keyframes carouselAnim {
-    from {
-      -webkit-transform: translate(0, 0);
-              transform: translate(0, 0);
-    }
-    to {
-      -webkit-transform: translate(calc(-100% + (1 * 300px)));
-              transform: translate(calc(-100% + (1 * 300px)));
-    }
-  }
-  @keyframes carouselAnim {
-    from {
-      -webkit-transform: translate(0, 0);
-              transform: translate(0, 0);
-    }
-    to {
-      -webkit-transform: translate(calc(-100% + (1 * 300px)));
-              transform: translate(calc(-100% + (1 * 300px)));
-    }
-  }
-  .container-anim #prev {
-    cursor: pointer;
-    position: absolute;
-    top: 80%;
-    z-index: 10;
-    left: 40%;
-    font-size: 30px;
-    color: black;
-  }
-  .container-anim #next {
-    cursor: pointer;
-    position: absolute;
-    top: 80%;
-    z-index: 10;
-    right: 40%;
-    font-size: 30px;
-    color: black;
-  }
+.chose-options .option .search .search-bar {
+  width: 90%;
 }
 
-.container-anim .faders {
+.chose-options .option .search .search-bar input {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
   width: 100%;
-  position: absolute;
-  height: 45vh;
+  background: #f1f1f1;
 }
 
-.container-anim .faders .left,
-.container-anim .faders .right {
-  background: -webkit-gradient(linear, left top, right top, from(#65c511), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(to right, #65c511 0%, rgba(255, 255, 255, 0) 100%);
+.chose-options .option .search button {
+  float: left;
   width: 20%;
-  height: 100%;
-  position: absolute;
-  z-index: 200;
+  padding: 10px;
+  background: #2196f3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
 }
 
-.container-anim .faders .right {
-  background: -webkit-gradient(linear, right top, left top, from(#65c511), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(to left, #65c511 0%, rgba(255, 255, 255, 0) 100%);
-  right: 0;
+.chose-options .option .search button:hover {
+  background: #0b7dda;
+}
+
+.chose-options .option .checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.chose-options .option .checkbox .container-checks {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.chose-options .option .checkbox .container-checks input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.chose-options .option .checkbox .container-checks input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+.chose-options .option .checkbox .container-checks input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.chose-options .option .checkbox .container-checks .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.chose-options .option .checkbox .container-checks .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.chose-options .option .checkbox .container-checks .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.chose-options .option .checkbox .container-checks:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+@media only screen and (max-width: 870px) {
+  .chose-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .chose-options .swiper-container {
+    width: 100%;
+  }
+  .chose-options .option {
+    margin: 5%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .chose-options .option .search {
+    margin-bottom: 5%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    width: 300px;
+  }
+  .chose-options .option .search input {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+  }
+  .chose-options .option .search button {
+    float: left;
+    width: 20%;
+  }
+  .chose-options .option .checkbox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 5%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 .section-recipe-ingredient {
-  height: 50vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -329,8 +418,8 @@ header nav .nav-links li a {
 
 .section-recipe-ingredient header {
   width: calc(100%-2em);
-  background: white;
-  border-radius: 10px;
+  background: black;
+  color: white;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -410,7 +499,7 @@ header nav .nav-links li a {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  overflow-y: scroll;
+  overflow-y: hidden;
 }
 
 .section-recipe-ingredient .row .section-ingredient .hidden-section {
@@ -438,6 +527,127 @@ header nav .nav-links li a {
           box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
+@media only screen and (max-width: 870px) {
+  .section-recipe-ingredient {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section-recipe-ingredient header {
+    width: 100%;
+    background: black;
+    color: white;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .section-recipe-ingredient .row {
+    margin: 1em;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .section-recipe-ingredient .row .section-recipe {
+    height: 40vh;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow-y: scroll;
+  }
+  .section-recipe-ingredient .row .section-recipe div .container-recipe {
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    width: 300px;
+    background: white;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+  .section-recipe-ingredient .row .section-recipe div .container-recipe .name {
+    font-weight: bold;
+    text-align: center;
+  }
+  .section-recipe-ingredient .row .section-recipe div .container-recipe .image {
+    border-radius: 20%;
+    width: 200px;
+    height: 150px;
+    padding: 2em;
+  }
+  .section-recipe-ingredient .row .section-ingredient {
+    margin-top: 1%;
+    border-top: solid black 10px;
+    width: 100%;
+    height: 60vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow-y: hidden;
+  }
+  .section-recipe-ingredient .row .section-ingredient .hidden-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    height: 45vh;
+    width: 80%;
+    background: white;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 10px;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
 body,
 html {
   margin: 0;
@@ -452,5 +662,23 @@ body {
 
 header {
   position: relative;
+}
+
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: calc(100%-2em);
+  background: black;
+  color: white;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 /*# sourceMappingURL=recipe.css.map */
